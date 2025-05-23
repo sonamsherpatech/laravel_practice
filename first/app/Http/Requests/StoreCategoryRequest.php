@@ -22,7 +22,17 @@ class StoreCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required',
+            'rank' => 'required',
+            'slug' => 'required',
+            'status' => 'required',
+        ];
+    }
+    
+    public function messages(): array {
+        return [
+            'title.required' => 'Please enter title',
+            'rank.required' => 'please enter rank',
         ];
     }
 }
